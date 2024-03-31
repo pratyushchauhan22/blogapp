@@ -2,21 +2,21 @@ package com.pratyush.blogapp.users;
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
+import jakarta.persistence.Entity;
 import lombok.*;
-import org.hibernate.Hibernate;
-
-import java.util.Objects;
 
 @Entity(name = "users")
 @Getter
 @Setter
+@Builder
 @ToString
 @RequiredArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserEntity {
     @Id
     @GeneratedValue(strategy =  GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
+    @Column( nullable = false)
     private Long id;
 
     @Column( nullable = false)
